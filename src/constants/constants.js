@@ -9,6 +9,9 @@ export const dialogueData = {
     text: "POPPADOM OR BREAD!!? POPPADOM OR BREAD!!?",
     choices: ['Poppadom', 'Bread'],
   },
+  'starter': {
+    text: '',
+  },
   'bookshelves': {
     text: "Oh, Look! New additions to the bookshelves: 'The Greek and Roman Myths' and 'The Lost City of Z'.Thank you for these!! :)",
     close: 'Okay!',
