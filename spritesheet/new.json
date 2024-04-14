@@ -133,12 +133,12 @@
                  "rotation":0,
                  "type":"has-dialogue",
                  "visible":true,
-                 "width":16.3636363636364,
-                 "x":-16.1818181818182,
+                 "width":10.0909090909091,
+                 "x":-6.1818181818182,
                  "y":64.3636363636364
                 }, 
                 {
-                 "height":16.2102272727273,
+                 "height":17.5738636363636,
                  "id":45,
                  "name":"water-table",
                  "rotation":0,
@@ -146,7 +146,7 @@
                  "visible":true,
                  "width":19.1306818181818,
                  "x":69.1590909090909,
-                 "y":57.8806818181818
+                 "y":56.5170454545455
                 }, 
                 {
                  "height":15.4545454545455,
@@ -598,7 +598,7 @@
          "y":0
         }],
  "nextlayerid":13,
- "nextobjectid":121,
+ "nextobjectid":135,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"git",
@@ -615,6 +615,10 @@
         {
          "firstgid":2419,
          "source":"foods.tsx"
+        }, 
+        {
+         "firstgid":4129,
+         "source":"foodsvg.tsx"
         }],
  "tilewidth":16,
  "type":"map",
