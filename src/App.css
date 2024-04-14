@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: monogram;
+  src: url('@/assets/fonts/monogram.ttf');
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: monogram, monospace;
+  font-size: 2rem;
+  overflow: hidden;
+}
+
+#textbox {
+  border-radius: 3px;
+  outline-style: solid;
+  padding: 1rem;
+  word-spacing: 0.2rem;
+  filter: drop-shadow(0 0 0.75rem, rgb(112, 112, 112));
+}
+
+.ui-text {
+  padding: 1rem;
+  user-select: none;
+  background: rgba( 49, 16, 71, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 4px );
+  -webkit-backdrop-filter: blur( 4px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.ui-btn {
+  border-style: none;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: inherit;
+}
