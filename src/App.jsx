@@ -1,82 +1,29 @@
 import { useEffect, useState } from 'react'
 import './App.css'
-import kaboomInit from '@/utils/kaboomInit'
-import { setDialogue, setPlayingSong, store } from './store'
+import { store } from './store'
 import Typewriter from 'typewriter-effect'
 import Player from './components/AudioPlayer'
-import { dialogueData, sounds } from './constants/constants'
+import { closeDialogue, initialiseKaboom, onChoiceSelected, stopPlaying } from './useApp'
 
 function App() {
-  const [dialogueText, setDialogueText] = useState('')
-  const [showDialogue, setShowDialogue] = useState(false)
+  const [state, setState] = useState({})
   const [choices, setChoices] = useState([])
-  const [playingSong, setSong] = useState(null)
-  const [boundary, setBoundary] = useState('')
-  const [closeText, setCloseText] = useState(false)
 
   useEffect(() => {
+    initialiseKaboom()
     const unsubscribe = store.subscribe(() => {
       const state = store.getState()
-      setDialogueText(state.dialogueText)
-      setShowDialogue(state.showDialogue)
+      
+      setState(state)
       setTimeout(() => {
         if (choices !== state.choices) setChoices(state.choices)
       }, 500)
-      if (playingSong !== state.playingSong) setSong(state.playingSong)
-      if (boundary !== state.boundary) setBoundary(state.boundary)
-      setCloseText(state.closeText)
     })
 
     return () => {
       unsubscribe()
     }
   }, [])
-
-  const poppadomOrBread = () => {
-    const { text, choices } = dialogueData['poppadomOrBread']
-    const payload = {
-      text,
-      choices,
-      showDialogue: true,
-      boundary: 'pob'
-    }
-    store.dispatch(setDialogue(payload))
-  }
-
-  const closeDialogue = () => {
-    if (boundary === 'water-table') {
-      setTimeout(() => poppadomOrBread(), 2000)
-    } else if (boundary === 'exit') {
-      const audio = new Audio(sounds['Yeah'])
-      audio.play()
-    } else if (boundary === 'bookshelves') {
-      const audio = new Audio(sounds['Fine'])
-      audio.play()
-    }
-    const payload = {
-      text: '',
-      choices: [],
-      showDialogue: false,
-    }
-    store.dispatch(setDialogue(payload))
-  }
-
-  const onChoiceSelected = choice => {
-    store.dispatch(setPlayingSong(choice))
-  }
-
-  const stopPlaying = () => {
-    store.dispatch(setPlayingSong(null))
-  }
-  
-  useEffect(() => {
-    const canvas = document.getElementById('kanvas');
-    if (!canvas) {
-      console.error("Canvas element not found!");
-      return;
-    }
-    kaboomInit(canvas)
-  }, []);
 
   return (
     <div className='w-screen h-screen overflow-hidden relative'>
@@ -85,12 +32,12 @@ function App() {
           Tap/Click around or use keyboard arrows to move
         </p>
         {
-          showDialogue
+          state.showDialogue
           ? (
               <div id="textbox-container" className='absolute left-[10%] right-[10%] bottom-[2vh]'>
                 <div id="textbox" className='min-h-[10vh] bg-white text-black text-left flex flex-col flex-wrap'>
                   {
-                    playingSong
+                    state.playingSong
                       ? (
                         <div className='relative'>
                           <div
@@ -99,18 +46,18 @@ function App() {
                           >
                             X
                           </div>
-                          <Player source={playingSong} />
+                          <Player source={state.playingSong} />
                         </div>
                       )
                       : (
                         <>
                           <div id="content">
                             {
-                              dialogueText
+                              state.dialogueText
                               ? (<div id="dialogue" className='ui-text m-0'>
                                   <Typewriter
                                     options={{
-                                      strings: dialogueText,
+                                      strings: state.dialogueText,
                                       autoStart: true,
                                       delay: 1,
                                       cursor: '',
@@ -137,9 +84,9 @@ function App() {
                             <button
                               id="close"
                               className='ui-btn text-white hover:shadow-lg hover:shadow-gray-500/50 py-1 px-2'
-                              onClick={closeDialogue}
+                              onClick={() => { closeDialogue(state.boundary) }}
                             >
-                              { closeText ?? 'Close' }
+                              { state.closeText ?? 'Close' }
                             </button>
                           </div>
                         </>
