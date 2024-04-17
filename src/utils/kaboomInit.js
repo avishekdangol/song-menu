@@ -69,10 +69,11 @@ const init = canvas => {
           player.onCollide(boundary.name, () => {
             if (boundary.type === 'has-dialogue') {
                 player.isInDialogue = true
-                const { text, choices, close = null } = dialogueData[boundary.name]
+                const { text, choices, choiceType = null, close = null } = dialogueData[boundary.name]
                 const payload = {
                   text,
                   choices,
+                  choiceType,
                   showDialogue: true,
                   boundary: boundary.name,
                   close,
@@ -218,7 +219,7 @@ const init = canvas => {
     } else player.isInDialogue = true
   }
 
-  const unsubscribe = store.subscribe(handleStoreChange)
+  store.subscribe(handleStoreChange)
 }
 
 export default init

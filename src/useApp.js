@@ -1,6 +1,7 @@
-import { dialogueData, sounds } from "./constants/constants"
-import { setDialogue, setPlayingSong, store } from "./store"
+import { dialogueData } from "./constants/constants"
+import { setDialogue, setPlayingSong, setCurrentVisual, store } from "./store"
 import kaboomInit from '@/utils/kaboomInit'
+import playSound from "./utils/playSounds"
 
 const poppadomOrBread = () => {
   const { text, choices } = dialogueData['poppadomOrBread']
@@ -22,16 +23,12 @@ export const initialiseKaboom = () => {
     kaboomInit(canvas)
 }
 
-export const closeDialogue = (boundary) => {
+export const closeDialogue = boundary => {
   if (boundary === 'water-table') {
     setTimeout(() => poppadomOrBread(), 2000)
-  } else if (boundary === 'exit') {
-    const audio = new Audio(sounds['Yeah'])
-    audio.play()
-  } else if (boundary === 'bookshelves') {
-    const audio = new Audio(sounds['Fine'])
-    audio.play()
   }
+  playSound(boundary)
+
   const payload = {
     text: '',
     choices: [],
@@ -41,7 +38,18 @@ export const closeDialogue = (boundary) => {
 }
 
 export const onChoiceSelected = choice => {
-  store.dispatch(setPlayingSong(choice))
+  const state = store.getState()
+
+  switch (state.choiceType) {
+    case 'song':
+      store.dispatch(setPlayingSong(choice))
+      break
+    case 'visual':
+      store.dispatch(setCurrentVisual(state.boundary))
+      break
+    default:
+      store.dispatch(setCurrentVisual(''))
+  }
 }
 
 export const stopPlaying = () => {
