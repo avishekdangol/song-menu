@@ -1,7 +1,8 @@
 import { dialogueData } from "./constants/constants"
-import { setDialogue, setPlayingSong, setCurrentVisual, store } from "./store"
+import { setDialogue, setPlayingSong, setCurrentVisual, store, setGoSpline } from "./store"
 import kaboomInit from '@/utils/kaboomInit'
 import playSound from "./utils/playSounds"
+import { exitRoom } from "./utils/kaboomInit"
 
 const poppadomOrBread = () => {
   const { text, choices } = dialogueData['poppadomOrBread']
@@ -47,6 +48,9 @@ export const onChoiceSelected = choice => {
     case 'visual':
       store.dispatch(setCurrentVisual(state.boundary))
       break
+    case 'spline':
+      store.dispatch(setGoSpline(true))
+      break;
     default:
       store.dispatch(setCurrentVisual(''))
   }
@@ -54,4 +58,10 @@ export const onChoiceSelected = choice => {
 
 export const stopPlaying = () => {
   store.dispatch(setPlayingSong(null))
+}
+
+export const toggleSpline = show => {
+  store.dispatch(setGoSpline(show))
+  closeDialogue()
+  exitRoom()
 }

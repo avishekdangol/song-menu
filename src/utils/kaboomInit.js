@@ -5,6 +5,10 @@ import { setDialogue, store } from "../store";
 
 let player
 
+export const exitRoom = () => {
+  player.play('idle-down')
+}
+
 const init = canvas => {
   const k = Kaboom(canvas)
 

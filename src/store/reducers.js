@@ -17,7 +17,10 @@ const reducers = {
   },
   setCurrentVisual: (state, { payload }) => {
     state.currentVisual = payload
-  }
+  },
+  setGoSpline: (state, { payload }) => {
+    state.goSpline = payload
+  },
 }
 
 export default reducers;

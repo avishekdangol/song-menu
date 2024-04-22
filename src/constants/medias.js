@@ -19,16 +19,16 @@ export const sounds = {
 
 export const visual = {
   tv: [
-    { image: mardi1, text: 'Hello' },
-    { image: mardi2, text: 'Great' },
-    { image: tshorolpa, text: 'Great' },
-    { image: tshorolpa2, text: 'Great' },
-    { image: tshorolpa3, text: 'Great' },
-    { image: tshorolpa4, text: 'Great' },
-    { image: birthday, text: 'Great' },
-    { image: bkt, text: 'Great' },
-    { image: home, text: 'Great' },
-    { image: godawari, text: 'Great' },
-    { image: godawari2, text: 'Great' },
+    { image: mardi1, text: 'Mardi Trek - Jan 2020' },
+    { image: mardi2, text: 'Mardi Trek - Jan 2020' },
+    { image: tshorolpa, text: 'Tsho Rolpa - Mar 2022' },
+    { image: tshorolpa2, text: 'Tsho Rolpa - Mar 2022' },
+    { image: tshorolpa3, text: 'Tsho Rolpa - Mar 2022' },
+    { image: tshorolpa4, text: 'Tsho Rolpa - Mar 2022' },
+    { image: birthday, text: 'Syrian Food - Mar 2022' },
+    { image: bkt, text: 'Bhaktapur - Mar 2022' },
+    { image: home, text: 'Breakfast at Home - 2022' },
+    { image: godawari, text: 'Botanical Garden - Mar 2022' },
+    { image: godawari2, text: 'Botanical Garden - Mar 2022' },
   ]
 }

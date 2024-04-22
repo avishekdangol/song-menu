@@ -53,16 +53,16 @@ export default function PhotoViewer() {
             className="bg-white"
             plugins={[
               Autoplay({
-                delay: 3000,
+                delay: 4000,
               })
             ]}
           >
             <CarouselContent>
               {visual[state.currentVisual].map(visual => (
                 <CarouselItem key={visual.image}>
-                  <div className='w-screen h-screen'>
+                  <div className='w-screen h-screen relative'>
                     <img className='object-cover w-full h-full' src={visual.image} alt="" />
-                    <span className="text-3xl font-semibold">{visual.text}</span>
+                    <span className="absolute left-10 bottom-10 photo-text text-rose-700 py-1 px-3 text-3xl font-semibold">{visual.text}</span>
                   </div>
                 </CarouselItem>
               ))}
