@@ -34,5 +34,3 @@ jobs:
         npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>" --cname song-menu.avishekdangol.com.np
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    - name: Create or update CNAME file
-      run: echo "song-menu.avishekdangol.com.np" > ./CNAME
