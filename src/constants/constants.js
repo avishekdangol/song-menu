@@ -1,5 +1,7 @@
-import still from '@/assets/songs/still.mp3'
+import sparks from '@/assets/songs/sparks.wav'
 import solitude from '@/assets/songs/solitude.wav'
+import masterpiece from '@/assets/songs/masterpiece.wav'
+import normal from '@/assets/songs/normal.wav'
 
 export const scaleFactor = 4
 
@@ -7,16 +9,16 @@ export const dialogueData = {
   waterTable: {
     text: "Still or Sparkling Water?",
     choices: [
-      { label: 'Still', choice: 'Still' },
-      { label: 'Sparkling', choice: 'Sparkling' },
+      { label: 'Still', choice: 'still' },
+      { label: 'Sparkling', choice: 'sparkling' },
     ],
     choiceType: 'song',
   },
   poppadomOrBread: {
     text: "POPPADOM OR BREAD!!? POPPADOM OR BREAD!!?",
     choices: [
-      { label: 'Poppadom', choice: 'Poppadom' },
-      { label: 'Bread', choice: 'Bread' },
+      { label: 'Poppadom', choice: 'poppadom' },
+      { label: 'Bread', choice: 'bread' },
     ],
     choiceType: 'song',
   },
@@ -24,7 +26,9 @@ export const dialogueData = {
     text: '',
   },
   mainCourse: {
-    text: '',
+    text: 'The main course should be a masterpiece',
+    choiceType: 'song',
+    choices: [{ label: 'Try it' }],
   },
   sideDish: {
     text: '',
@@ -58,9 +62,17 @@ export const dialogueData = {
 }
 
 export const songs = {
-  Still: {
-    title: 'Still Water - Song Name',
-    song: still,
+  sparkling: {
+    title: 'Sparks - Sparkling Water',
+    song: sparks,
+  },
+  poppadom: {
+    title: '(Normal) Poppadom',
+    song: normal,
+  },
+  mainCourse: {
+    title: 'Main: Masterpiece',
+    song: masterpiece,
   },
   dessert: {
     title: 'Dessert: Solitude',
