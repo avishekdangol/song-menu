@@ -224,6 +224,18 @@
                  "width":17.2727272727273,
                  "x":70.9090909090909,
                  "y":100.909090909091
+                },
+            
+                {
+                 "height":16,
+                 "id":227,
+                 "name":"secretDoor",
+                 "rotation":0,
+                 "type":"has-dialogue",
+                 "visible":true,
+                 "width":15.6363636363636,
+                 "x":32.3636363636364,
+                 "y":0.545454545454545
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -596,6 +608,18 @@
                  "width":16,
                  "x":71.8863636363636,
                  "y":114.295454545455
+                }, 
+                {
+                 "gid":23,
+                 "height":16,
+                 "id":226,
+                 "name":"secret-door",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":16,
+                 "x":32,
+                 "y":16
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -604,7 +628,7 @@
          "y":0
         }],
  "nextlayerid":13,
- "nextobjectid":226,
+ "nextobjectid":228,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"git",
