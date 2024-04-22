@@ -26,8 +26,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Create or update CNAME file
-        run: echo "song-menu.avishekdangol.com.np" > ./CNAME
     - run: npm ci
     - run: npm run build --if-present
     - name: Deploy with gh-pages
@@ -36,3 +34,5 @@ jobs:
         npx gh-pages -d dist -u "github-actions-bot <support+actions@github.com>"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Create or update CNAME file
+      run: echo "song-menu.avishekdangol.com.np" > ./CNAME
