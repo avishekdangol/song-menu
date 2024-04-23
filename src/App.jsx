@@ -6,12 +6,23 @@ import Player from './components/AudioPlayer'
 import { closeDialogue, initialiseKaboom, onChoiceSelected, stopPlaying, toggleSpline } from './useApp'
 import PhotoViewer from './components/PhotoViewer'
 import Spline from './components/Spline'
+import Loader from './components/Loader'
 
 function App() {
   const [state, setState] = useState({})
+  const [isLoading, setIsLoading] = useState(true)
+  const [loadingPreloader, setLoadingpreloader] = useState(true)
+
+  setTimeout(() => {
+    setLoadingpreloader(false)
+  }, 4000)
 
   const closeSpline = () => {
     toggleSpline(false)
+  }
+
+  const handleLoading = () => {
+    setIsLoading(false)
   }
 
   useEffect(() => {
@@ -22,13 +33,18 @@ function App() {
       setState(state)
     })
 
+    window.addEventListener('load', handleLoading)
+
     return () => {
+      window.removeEventListener('load', handleLoading)
       unsubscribe()
     }
   }, [])
 
   return (
     <div className='w-screen h-screen overflow-hidden relative'>
+      {/* Loader */}
+      { (isLoading || loadingPreloader) && <Loader /> }
       {/* Spline Room */}
       {
         state.goSpline 
