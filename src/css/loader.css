@@ -1,0 +1,9 @@
+.tp {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  fill-opacity: 0;
+}
+.image-wrapper {
+  width: 25vw;
+  height: 265px;
+}

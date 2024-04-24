@@ -11,6 +11,17 @@ import bkt from '@/assets/visuals/images/bkt.jpg'
 import home from '@/assets/visuals/images/home.jpeg'
 import godawari from '@/assets/visuals/images/godawari.jpg'
 import godawari2 from '@/assets/visuals/images/godawari2.jpg'
+import thumbmardi1 from '@/assets/visuals/thumbnails/mardi1.jpg'
+import thumbmardi2 from '@/assets/visuals/thumbnails/mardi2.jpg'
+import thumbtshorolpa from '@/assets/visuals/thumbnails/tsho_rolpa.jpg'
+import thumbtshorolpa2 from '@/assets/visuals/thumbnails/tshorolpa2.jpg'
+import thumbtshorolpa3 from '@/assets/visuals/thumbnails/tshorolpa3.jpg'
+import thumbtshorolpa4 from '@/assets/visuals/thumbnails/tshorolpa4.jpg'
+import thumbbirthday from '@/assets/visuals/thumbnails/birthday.jpg'
+import thumbbkt from '@/assets/visuals/thumbnails/bkt.jpg'
+import thumbhome from '@/assets/visuals/thumbnails/home.jpg'
+import thumbgodawari from '@/assets/visuals/thumbnails/godawari.jpg'
+import thumbgodawari2 from '@/assets/visuals/thumbnails/godawari2.jpg'
 
 export const sounds = {
   bookshelves: fine,
@@ -32,3 +43,17 @@ export const visual = {
     { image: godawari2, text: 'Botanical Garden - Mar 2022' },
   ]
 }
+
+export const thumbnails = [
+  thumbmardi1,
+  thumbmardi2,
+  thumbtshorolpa,
+  thumbtshorolpa2,
+  thumbtshorolpa3,
+  thumbtshorolpa4,
+  thumbbirthday,
+  thumbbkt,
+  thumbhome,
+  thumbgodawari,
+  thumbgodawari2,
+]

@@ -15,7 +15,7 @@ function App() {
 
   setTimeout(() => {
     setLoadingpreloader(false)
-  }, 4000)
+  }, 5000)
 
   const closeSpline = () => {
     toggleSpline(false)
