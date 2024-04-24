@@ -13,6 +13,7 @@ const reducers = {
     state.choiceType = choiceType ?? null
   },
   setPlayingSong: (state, { payload }) => {
+    console.log(payload)
     state.playingSong = songs[payload]
   },
   setCurrentVisual: (state, { payload }) => {

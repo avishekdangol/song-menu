@@ -5,12 +5,13 @@ import playSound from "./utils/playSounds"
 import { exitRoom } from "./utils/kaboomInit"
 
 const poppadomOrBread = () => {
-  const { text, choices } = dialogueData['poppadomOrBread']
+  const { text, choices, choiceType } = dialogueData['poppadomOrBread']
   const payload = {
     text,
     choices,
     showDialogue: true,
-    boundary: 'pob'
+    boundary: 'pob',
+    choiceType,
   }
   store.dispatch(setDialogue(payload))
 }
