@@ -38,7 +38,7 @@ export const dialogueData = {
   sideDish: {
     text: 'Want some up(side) dish? Why not try some upside down burger??',
     choiceType: 'song',
-    choices: [{ label: '' }],
+    choices: [{ label: 'Yes, Please' }],
   },
   drinks: {
     text: 'Let\'s have a glass of mountain dew with "Kentucky Pill"',
@@ -91,7 +91,7 @@ export const songs = {
     title: 'Side: (Upside Down) Burger',
     song: upsideDown,
   },
-  drink: {
+  drinks: {
     title: 'Drink: Mountain Dew with (Kentucky Pill)',
     song: kentuckyPill,
   },
