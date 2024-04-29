@@ -27,7 +27,10 @@ export const initialiseKaboom = () => {
 
 export const closeDialogue = boundary => {
   if (boundary === 'waterTable') {
-    setTimeout(() => poppadomOrBread(), 2000)
+    setTimeout(() => {
+      poppadomOrBread()
+      playSound('poppadomsOrBread')
+    }, 2000)
   }
   playSound(boundary)
 

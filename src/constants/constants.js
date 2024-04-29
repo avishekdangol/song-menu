@@ -2,12 +2,15 @@ import sparks from '@/assets/songs/sparks.wav'
 import solitude from '@/assets/songs/solitude.wav'
 import masterpiece from '@/assets/songs/masterpiece.wav'
 import normal from '@/assets/songs/normal.wav'
+import theJeanGenie from '@/assets/songs/the jean genie.wav'
+import kentuckyPill from '@/assets/songs/kentucky pill.wav'
+import upsideDown from '@/assets/songs/upside down.wav'
 
 export const scaleFactor = 4
 
 export const dialogueData = {
   waterTable: {
-    text: "Still or Sparkling Water?",
+    text: 'Still or Sparkling Water?',
     choices: [
       { label: 'Still', choice: 'still' },
       { label: 'Sparkling', choice: 'sparkling' },
@@ -15,7 +18,7 @@ export const dialogueData = {
     choiceType: 'song',
   },
   poppadomOrBread: {
-    text: "POPPADOM OR BREAD!!? POPPADOM OR BREAD!!?",
+    text: 'POPPADOM OR BREAD!!? POPPADOM OR BREAD!!?',
     choices: [
       { label: 'Poppadom', choice: 'poppadom' },
       { label: 'Bread', choice: 'bread' },
@@ -23,7 +26,9 @@ export const dialogueData = {
     choiceType: 'song',
   },
   starter: {
-    text: '',
+    text: 'Let\'s start with The Jean Genie!!',
+    choices: [{ label: 'Let\'s get started' }],
+    choiceType: 'song',
   },
   mainCourse: {
     text: 'The main course should be a masterpiece',
@@ -31,10 +36,14 @@ export const dialogueData = {
     choices: [{ label: 'Try it' }],
   },
   sideDish: {
-    text: '',
+    text: 'Want some up(side) dish? Why not try some upside down burger??',
+    choiceType: 'song',
+    choices: [{ label: '' }],
   },
   drinks: {
-    text: '',
+    text: 'Let\'s have a glass of mountain dew with "Kentucky Pill"',
+    choiceType: 'song',
+    choices: [{ label: 'Drink it' }]
   },
   dessert: {
     text: 'Solitude is a lovely dessert!',
@@ -46,16 +55,16 @@ export const dialogueData = {
     close: 'Okay!',
   },
   tv: {
-    text: "Oooh, Izzy and Avi adventures on the TV! That's so cool!! Watch?",
+    text: 'Oooh, Izzy and Avi adventures on the TV! That\'s so cool!! Watch?',
     choices: [{ label: 'Watch' }],
     choiceType: 'visual',
     close: 'Later',
   },
   exit: {
-    text: "You are trapped here! No way out!!",
+    text: 'You are trapped here! No way out!!',
   },
   secretDoor: {
-    text: "Yay! You found a secret door!",
+    text: 'Yay! You found a secret door!',
     choiceType: 'spline',
     choices: [{ label: 'Enter' }]
   },
@@ -63,16 +72,28 @@ export const dialogueData = {
 
 export const songs = {
   sparkling: {
-    title: 'Sparks - Sparkling Water',
+    title: '(Sparks)ling Water',
     song: sparks,
   },
   poppadom: {
     title: '(Normal) Poppadom',
     song: normal,
   },
+  starter: {
+    title: 'Starter: The Jean Genie',
+    song: theJeanGenie,
+  },
   mainCourse: {
     title: 'Main: Masterpiece',
     song: masterpiece,
+  },
+  sideDish: {
+    title: 'Side: (Upside Down) Burger',
+    song: upsideDown,
+  },
+  drink: {
+    title: 'Drink: Mountain Dew with (Kentucky Pill)',
+    song: kentuckyPill,
   },
   dessert: {
     title: 'Dessert: Solitude',

@@ -2,8 +2,10 @@ import { Kaboom } from "@/contexts/KaboomCtx";
 import { dialogueData, scaleFactor } from "../constants/constants";
 import { setCamScale } from "./utils";
 import { setDialogue, store } from "../store";
+import playSound from "./playSounds";
 
 let player
+let started = false
 
 export const exitRoom = () => {
   player.play('idle-down')
@@ -118,6 +120,10 @@ const init = canvas => {
 
     k.onKeyPress(key => (pressedKey = key))
     k.onKeyDown(key => {
+      if (!started) {
+        playSound('welcome')
+        started = true
+      }
       if (player.isInDialogue) return
       switch (key) {
         case 'up':

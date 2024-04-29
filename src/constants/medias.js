@@ -1,5 +1,9 @@
 import fine from '@/assets/sounds/fine.mp3'
 import yeah from '@/assets/sounds/yeah.mp3'
+import welcome from '@/assets/sounds/welcome.wav'
+import poppadomsOrBread from '@/assets/sounds/poppadomsOrBread.wav'
+
+// images
 import mardi1 from '@/assets/visuals/images/mardi1.jpg'
 import mardi2 from '@/assets/visuals/images/mardi2.jpg'
 import tshorolpa from '@/assets/visuals/images/tsho_rolpa.jpg'
@@ -26,6 +30,8 @@ import thumbgodawari2 from '@/assets/visuals/thumbnails/godawari2.jpg'
 export const sounds = {
   bookshelves: fine,
   exit: yeah,
+  welcome,
+  poppadomsOrBread,
 }
 
 export const visual = {

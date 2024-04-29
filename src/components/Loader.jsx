@@ -11,10 +11,10 @@ function Loader() {
   useGSAP(() => {
     gsap.to(".tp4", { strokeDashoffset: "0", ease: "none", duration: 4})
     gsap.to(".tp4", { fillOpacity: 1, duration: 2.3 }, "-=1.3");
-    gsap.from(".image", { opacity: 0, duration: 0.1, stagger: 0.4, delay: 0.5 })
+    gsap.from(".image", { opacity: 0, duration: 1, stagger: 0.4, delay: 0.5 })
     gsap.to(".image", { opacity: 0, duration: 1, stagger: 0.4, delay: 1 })
-    gsap.from(".image", { filter: 'grayscale(100%)', duration: 0.1, stagger: 0.4, delay: 0.5 })
-    gsap.to(".image", { filter: 'grayscale(100%)', duration: 4, stagger: 0.4, delay: 0.5 })
+    gsap.from(".image", { filter: 'grayscale(0%)', duration: 1, stagger: 0.4, delay: 0.5 })
+    gsap.to(".image", { filter: 'grayscale(100%)', duration: 1, stagger: 0.4, delay: 0.5 })
   }, { scope: container })
 
   return (
