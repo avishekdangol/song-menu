@@ -85,7 +85,7 @@ function App() {
                       </div>
 
                       {/* Title */}
-                      <h4 className='font-bold text-gray-500 absolute top-[32px] left-[48px]'>{state.playingSong.title}</h4>
+                      <h4 className='font-bold text-gray-500 absolute top-[32px] left-[48px] max-w-[480px] leading-7'>{state.playingSong.title}</h4>
 
                       {/* Player */}
                       <Player source={state.playingSong.song} />

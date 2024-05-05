@@ -5,6 +5,7 @@ import normal from '@/assets/songs/normal.wav'
 import theJeanGenie from '@/assets/songs/the jean genie.wav'
 import kentuckyPill from '@/assets/songs/kentucky pill.wav'
 import upsideDown from '@/assets/songs/upside down.wav'
+import chinese from '@/assets/songs/chinese.wav'
 
 export const scaleFactor = 4
 
@@ -64,7 +65,7 @@ export const dialogueData = {
     text: 'You are trapped here! No way out!!',
   },
   secretDoor: {
-    text: 'Yay! You found a secret door!',
+    text: 'Yay! You found a secret door! When you enter the room, drag around and click on the objects to interact!',
     choiceType: 'spline',
     choices: [{ label: 'Enter' }]
   },
@@ -78,6 +79,10 @@ export const songs = {
   poppadom: {
     title: '(Normal) Poppadom',
     song: normal,
+  },
+  bread: {
+    title: '(Chinese) Bread',
+    song: chinese,
   },
   starter: {
     title: 'Starter: The Jean Genie',
