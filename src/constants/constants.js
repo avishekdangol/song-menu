@@ -5,7 +5,8 @@ import normal from '@/assets/songs/normal.wav'
 import theJeanGenie from '@/assets/songs/the jean genie.wav'
 import kentuckyPill from '@/assets/songs/kentucky pill.wav'
 import upsideDown from '@/assets/songs/upside down.wav'
-import chinese from '@/assets/songs/chinese.wav'
+import coffeeTV from '@/assets/songs/coffee and tv.wav'
+import sunshine from '@/assets/songs/sunshine.wav'
 
 export const scaleFactor = 4
 
@@ -76,13 +77,17 @@ export const songs = {
     title: '(Sparks)ling Water',
     song: sparks,
   },
+  still: {
+    title: 'You\'re (Still) My Sunshine',
+    song: sunshine,
+  },
   poppadom: {
     title: '(Normal) Poppadom',
     song: normal,
   },
   bread: {
-    title: '(Chinese) Bread',
-    song: chinese,
+    title: '(Coffee and TV and) Bread',
+    song: coffeeTV,
   },
   starter: {
     title: 'Starter: The Jean Genie',
